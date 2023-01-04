@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>index</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <a href="{% url 'index' %}">home</a>
@@ -12,6 +14,8 @@
     <h1>index</h1>
 
     <h2>{{mensagem}}</h2>
+
+    <img src="{% static 'images/chad.jpg' %}" alt="">
 
     <p>{{ firtProduto }}</p>
     <p>{{ lastProduto }}</p>
@@ -33,5 +37,9 @@
         {% endfor %}
         </tbody>
     </table>
+
+    <button onclick="teste();">click-me</button>
+
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
 </body>
 </html>
