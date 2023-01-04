@@ -11,6 +11,27 @@
     <a href="{% url 'contato' %}">contato</a>
     <h1>index</h1>
 
-    <h2>{{dado}}</h2>
+    <h2>{{mensagem}}</h2>
+
+    <p>{{ firtProduto }}</p>
+    <p>{{ lastProduto }}</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for produto in produtos %}
+            <tr>
+
+                <td><a href="{% url 'ver_produto' produto.id %}">{{ produto.nome }}</a></td>
+                <td>{{ produto.preco }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
